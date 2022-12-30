@@ -1,3 +1,4 @@
+// ----------------------------------- D-TASK START -----------------------------
 const moment = require('moment');
 const time = moment().format("HH:mm");
  const chalk = require('chalk');
@@ -67,4 +68,6 @@ myShop.sotish('non', 4)
 myShop.sotish('non', 2);
 const qoldiq = myShop.qoldiq();
  console.log(qoldiq)
-  
+
+ // --------------------    D-TASK END    --------------------------
+ 
