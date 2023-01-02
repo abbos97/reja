@@ -72,10 +72,11 @@
  // --------------------    D-TASK END    --------------------------
  
 
+ 
  // --------------------    E-TASK START  --------------------------
 
  function calculate(num1, str, num2) {
-    if(num1 !== undefined && num2 !== undefined && num1 !== null && num2 !== null && num1 !== 0 && num2 !== 0) {
+    if(num1 !== undefined && num2 !== undefined && num1 !== null && num2 !== null && num1 !== 0 ) {
         switch(str) {
             case '+':
                 return num1 + num2;
@@ -93,7 +94,7 @@
         return 'Not valid to operate'
     }
 }
-const j = calculate(0, '-', 2);
+const j = calculate(2, '+', 0);
 console.log(j)
 
 
