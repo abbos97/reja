@@ -91,43 +91,55 @@
 // ----------- 6-dars  Express Framework Va Bu Framework Orqali Web Server Quramiz --------
 
 
-console.log("Web Serverni boshladik");
+// console.log("Web Serverni boshladik");
+// const express = require("express");
+// const app = express();
+// const http = require("http");
 const express = require("express");
 const app = express();
-const http = require("http");
+const http = require("http")
 
-
-//1
 app.use(express.static("public"));
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
 
-//2 Session
+// 2 Session
 
-//3 Views code
+//3 views code
 app.set("views", "views");
-app.set("view engine", "ejs");
+app.set("views engine", "ejs");
 
 
-//4 Routing cude
 app.get("/", function(req, res) {
     res.end("Hammaga salom");
 });
 
-app.get("/1", function(req, res) {
-    res.end("Bu birinchi sahifa");
-});
-
-app.get("/2", function(req, res) {
-    res.end("Bu ikkinchi sahifa");
-});
-
-
 const server = http.createServer(app);
-let PORT = 3000;
-server.listen(PORT, function() {
-    console.log(`THe server is running successfully on port: ${PORT}`);
-});
+console.log(server)
+// //1
+// app.use(express.static("public"));
+// app.use(express.json());
+// app.use(express.urlencoded({extended: true}));
+
+
+// //2 Session
+
+// //3 Views code
+// app.set("views", "views");
+// app.set("view engine", "ejs");
+
+
+// //4 Routing cude
+// app.get("/", function(req, res) {
+//     res.end("Hammaga salom");
+// });
+
+
+// const server = http.createServer(app);
+// let PORT = 3000;
+// server.listen(PORT, function() {
+//     console.log(`THe server is running successfully on port: ${PORT}`);
+// });
 
 
