@@ -95,28 +95,28 @@
 // const express = require("express");
 // const app = express();
 // const http = require("http");
-const express = require("express");
-const app = express();
-const http = require("http")
+// const express = require("express");
+// const app = express();
+// const http = require("http")
 
-app.use(express.static("public"));
-app.use(express.json());
-app.use(express.urlencoded({extended: true}));
+// app.use(express.static("public"));
+// app.use(express.json());
+// app.use(express.urlencoded({extended: true}));
 
 
 // 2 Session
 
 //3 views code
-app.set("views", "views");
-app.set("views engine", "ejs");
+// app.set("views", "views");
+// app.set("views engine", "ejs");
 
 
-app.get("/", function(req, res) {
-    res.end("Hammaga salom");
-});
+// app.get("/", function(req, res) {
+//     res.end("Hammaga salom");
+// });
 
-const server = http.createServer(app);
-console.log(server)
+// const server = http.createServer(app);
+// console.log(server)
 // //1
 // app.use(express.static("public"));
 // app.use(express.json());
@@ -142,4 +142,40 @@ console.log(server)
 //     console.log(`THe server is running successfully on port: ${PORT}`);
 // });
 
+
+
+//  ==========================    [07] EJS Framework Orqali Ananaviy Frontend Quramiz  =============
+
+console.log('Web server boshlandi');
+const express = require("express");
+const res = require("express/lib/response");
+const app = express();
+const http = require('http');
+
+
+//1. Kirish
+
+app.use(express.static("public"));
+app.use(express.json());
+app.use(express.urlencoded({extended: true}));
+
+//2. Session code
+//3. Views code 
+app.set('views', 'views');
+app.set('view engine', 'ejs');
+
+//4 Routing code
+app.post("/create-item", (req, res) => {
+    console.log(req.body);
+    res.json({test: "success"})
+})
+app.get("/", function(req, res) {
+    res.render("harid");
+})
+
+const server = http.createServer(app);
+let PORT = 8080;
+server.listen(PORT, function() {
+    console.log(`The server is running successfully on port: ${PORT}`);
+})
 
