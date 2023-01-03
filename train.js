@@ -94,7 +94,7 @@
         return 'Not valid to operate'
     }
 }
-const j = calculate(2, '+', 0);
+const j = calculate(12, '*', 0);
 console.log(j)
 
 
