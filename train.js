@@ -1,3 +1,63 @@
+console.log("=====================9-dars========================")
+console.log("Jack Ma maslahatlari");
+const list = [
+    "Yaxshi talaba boling",//0-20
+    "Togri boshliq tanlang va koproq hato qiling",//20-30
+    "Ozingizga ishlashni boshlang", //30-40
+    "Siz kuchli bogan ishlarni qiling", //50-60
+    "Yoshlarga investitsiya qiling",
+    "Endi kechov, dam oling!" // 60
+]
+
+
+
+function maslahatBering(a, callback) {
+    if(typeof a !== "number") callback("Insert number", null);
+    else if(a <= 20 ) callback(null, list[0]);
+    else if(a > 20 && a <= 30) callback(null, list[1]);
+    else if(a > 30 && a <= 40) callback(null, list[2]);
+    else if(a > 40 && a <= 50) callback(null, list[3]);
+    else if(a > 50 && a <= 60) callback(null, list[4]);
+    else {
+        setTimeout(()=>{
+            callback(null, list[5]);
+        },0)
+    }
+}
+
+
+maslahatBering(21, (err, data) => {
+    if(err) console.log("ERROR:", err);
+    else {
+        console.log("Javob:", data);
+    }
+})
+
+// ---------------- F-task start --------------------
+console.log("================F-task===================")
+function findDoubler(a) {
+    const aSplit = a.split("");
+    const javob = aSplit.map((e, i, a) => {
+        return a[i] === a[i + 1]
+    })   
+    return javob.includes(true)
+}
+ const res = findDoubler("salolm");
+console.log(res)
+ 
+
+
+
+
+    
+
+      
+
+      
+
+
+// ---------------- F-task end --------------------
+
 // ----------------------------------- D-TASK START -----------------------------
 // const moment = require('moment');
 // const time = moment().format("HH:mm");
@@ -75,27 +135,27 @@
  
  // --------------------    E-TASK START  --------------------------
 
- function calculate(num1, str, num2) {
-    if(num1 !== undefined && num2 !== undefined && num1 !== null && num2 !== null && num1 !== 0 ) {
-        switch(str) {
-            case '+':
-                return num1 + num2;
-            break;
-            case '-':
-                return num1 - num2;
-                break;
-            case '*':
-                return num1 * num2;
-                break;
-            case '/':
-                return num1 / num2;
-        }
-    } else {
-        return 'Not valid to operate'
-    }
-}
-const j = calculate(12, '*', 0);
-console.log(j)
+//  function calculate(num1, str, num2) {
+//     if(num1 !== undefined && num2 !== undefined && num1 !== null && num2 !== null && num1 !== 0 ) {
+//         switch(str) {
+//             case '+':
+//                 return num1 + num2;
+//             break;
+//             case '-':
+//                 return num1 - num2;
+//                 break;
+//             case '*':
+//                 return num1 * num2;
+//                 break;
+//             case '/':
+//                 return num1 / num2;
+//         }
+//     } else {
+//         return 'Not valid to operate'
+//     }
+// }
+// const j = calculate(12, '*', 0);
+// console.log(j)
 
 
 
