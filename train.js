@@ -1,49 +1,182 @@
-console.log("=====================9-dars========================")
-console.log("Jack Ma maslahatlari");
-const list = [
-    "Yaxshi talaba boling",//0-20
-    "Togri boshliq tanlang va koproq hato qiling",//20-30
-    "Ozingizga ishlashni boshlang", //30-40
-    "Siz kuchli bogan ishlarni qiling", //50-60
-    "Yoshlarga investitsiya qiling",
-    "Endi kechov, dam oling!" // 60
-]
+// ============================= G-TASK ========================
 
-
-
-function maslahatBering(a, callback) {
-    if(typeof a !== "number") callback("Insert number", null);
-    else if(a <= 20 ) callback(null, list[0]);
-    else if(a > 20 && a <= 30) callback(null, list[1]);
-    else if(a > 30 && a <= 40) callback(null, list[2]);
-    else if(a > 40 && a <= 50) callback(null, list[3]);
-    else if(a > 50 && a <= 60) callback(null, list[4]);
-    else {
-        setTimeout(()=>{
-            callback(null, list[5]);
-        },0)
-    }
+function findBig(a) {
+    let bigNum = Math.max(...a)
+    let index = a.indexOf(bigNum)
+    return index
+    
 }
 
+const javob = findBig([1,1221,2,4,122]);
+console.log(javob)
 
-maslahatBering(21, (err, data) => {
-    if(err) console.log("ERROR:", err);
-    else {
-        console.log("Javob:", data);
-    }
-})
+
+
+// console.log("=====================10-dars========================")
+// 'sync' ni 'async' ozgartirish  ====>
+
+// console.log("Jack Ma maslahatlari");
+
+
+// const list = [
+//     "Yaxshi talaba boling",//0-20
+//     "Togri boshliq tanlang va koproq hato qiling",//20-30
+//     "Ozingizga ishlashni boshlang", //30-40
+//     "Siz kuchli bogan ishlarni qiling", //50-60
+//     "Yoshlarga investitsiya qiling",
+//     "Endi kechov, dam oling!" // 60
+//]
+
+// =================== Definition qismi async va callback ======================
+
+// ********************** callback bilan promise farqi ****************************
+// function maslahatBering(a, callback) {
+//     if(typeof a !== "number") callback("Insert number", null);
+//     else if(a <= 20 ) callback(null, list[0]);
+//     else if(a > 20 && a <= 30) callback(null, list[1]);
+//     else if(a > 30 && a <= 40) callback(null, list[2]);
+//     else if(a > 40 && a <= 50) callback(null, list[3]);
+//     else if(a > 50 && a <= 60) callback(null, list[4]);
+//     else {
+//         setInterval(() => {
+//             callback(null, list[5]);
+//         }, 1000)
+//         // return new Promise((resolve, reject) => {
+//         //     setInterval(() => {
+//         //         resolve(list[5])
+//         //     },2000)
+           
+//         // })
+
+//     }
+// }
+// maslahatBering(75, (err, data) => {
+//     if(err) console.log("Error", err);
+//     else {
+//         console.log(data)
+//     }
+// })
+
+
+
+
+//  async function maslahatBering(a) {
+//     if(typeof a !== "number") throw new Error("Insert number");
+//     else if(a <= 20 ) return list[0];
+//     else if(a > 20 && a <= 30) return list[1];
+//     else if(a > 30 && a <= 40) return list[2];
+//     else if(a > 40 && a <= 50) return list[3];
+//     else if(a > 50 && a <= 60) return list[4];
+//     else {
+//         return new Promise((resolve, reject) => {
+//             setInterval(() => {
+//                 resolve(list[5])
+//             },2000)
+           
+//         })
+
+//     }
+// }
+
+
+// ========================== ASYNC CALL TURLARI ==============================
+
+// ****************** async/await orqali call qilish ************************
+
+// async function run() {
+//     let javob = await maslahatBering(70);
+//     console.log(javob)
+    //  javob = await maslahatBering(30);
+    // console.log(javob)
+    //  javob = await maslahatBering(27);
+    // console.log(javob)
+    //  javob = await maslahatBering(50);
+    // console.log(javob)
+// }
+// run()
+
+//****************** then/catch orqali call qilish *******************
+// console.log("1")
+// maslahatBering(21).then(data => {
+//     console.log("Javob:", data)
+// }).catch(err => {
+//     console.log("ERROR:", err)
+// })
+// console.log("2")
+
+
+
+//****************Promise hell call qilish ***************************
+
+// console.log("1")
+// maslahatBering(21).then(data => {
+//     maslahatBering(31).then(data => {
+//         maslahatBering(41).then(data => {
+//             console.log("Javob:", data)
+//         }).catch(err => {
+//             console.log("ERROR:", err)
+//         })
+//         console.log("Javob:", data)
+//     }).catch(err => {
+//         console.log("ERROR:", err)
+//     })
+//     console.log("Javob:", data)
+// }).catch(err => {
+//     console.log("ERROR:", err)
+// })
+// console.log("2")
+
+
+
+
+
+// console.log("=====================9-dars========================")
+
+// console.log("Jack Ma maslahatlari");
+// const list = [
+//     "Yaxshi talaba boling",//0-20
+//     "Togri boshliq tanlang va koproq hato qiling",//20-30
+//     "Ozingizga ishlashni boshlang", //30-40
+//     "Siz kuchli bogan ishlarni qiling", //50-60
+//     "Yoshlarga investitsiya qiling",
+//     "Endi kechov, dam oling!" // 60
+// ]
+
+
+
+// function maslahatBering(a, callback) {
+//     if(typeof a !== "number") callback("Insert number", null);
+//     else if(a <= 20 ) callback(null, list[0]);
+//     else if(a > 20 && a <= 30) callback(null, list[1]);
+//     else if(a > 30 && a <= 40) callback(null, list[2]);
+//     else if(a > 40 && a <= 50) callback(null, list[3]);
+//     else if(a > 50 && a <= 60) callback(null, list[4]);
+//     else {
+//         setTimeout(()=>{
+//             callback(null, list[5]);
+//         },0)
+//     }
+// }
+
+
+// maslahatBering(21, (err, data) => {
+//     if(err) console.log("ERROR:", err);
+//     else {
+//         console.log("Javob:", data);
+//     }
+// })
 
 // ---------------- F-task start --------------------
-console.log("================F-task===================")
-function findDoubler(a) {
-    const aSplit = a.split("");
-    const javob = aSplit.map((e, i, a) => {
-        return a[i] === a[i + 1]
-    })   
-    return javob.includes(true)
-}
- const res = findDoubler("salolm");
-console.log(res)
+// console.log("================F-task===================")
+// function findDoubler(a) {
+//     const aSplit = a.split("");
+//     const javob = aSplit.map((e, i, a) => {
+//         return a[i] === a[i + 1]
+//     })   
+//     return javob.includes(true)
+// }
+//  const res = findDoubler("helo how arre you");
+// console.log(res)
  
 
 
