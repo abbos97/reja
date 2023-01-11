@@ -9,7 +9,7 @@ mongodb.connect(connectionString, {useNewUrlParser: true, useUnifiedTopology: tr
     else {
         console.log("Mongodb connaction succed")
         module.exports = client;
-        console.log(client)
+
         const app = require("./app");
         const server = http.createServer(app);
         let PORT = 3000;
