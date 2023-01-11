@@ -7,7 +7,7 @@ function findBig(a) {
     
 }
 
-const javob = findBig([1,1221,2,4,122]);
+const javob = findBig([1,11,12,4,3,12]);
 console.log(javob)
 
 
