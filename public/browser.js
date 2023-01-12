@@ -29,3 +29,24 @@ createForm.addEventListener('submit', function(e) {
         console.log("Iltimos qayta harakat qilib koring!");
     })
 })
+
+document.addEventListener("click", function(e) {
+    if(e.target.classList.contains("delete-me")) {
+       if(confirm("Aniq ochirmoqchimisz?")) {
+           axios.post("/delete-item", {id: e.target.getAttribute("data-id")}).then(response => {
+            console.log(response.data);
+            e.target.parentElement.parentElement.remove();
+           }).catch(err => {
+            console.log("Delete ishlamadi")
+           })
+       } 
+    }
+
+    if(e.target.classList.contains("edit-me")) {
+        if(confirm("Edit qilishni hohlaysizmi?")) {
+            console.log("edit")
+        }else {
+            alert("Yoq")
+        }
+    }
+})
