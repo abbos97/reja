@@ -1,14 +1,25 @@
+// ======================= H-task ======================
+
+function reverseString(a) {
+    return a.split("").reverse().join("")
+}
+console.log(reverseString("javascript"))
+
+//======================= end H-task =======================
+
+
+
 // ============================= G-TASK ========================
 
-function findBig(a) {
-    let bigNum = Math.max(...a)
-    let index = a.indexOf(bigNum)
-    return index
+// function findBig(a) {
+//     let bigNum = Math.max(...a)
+//     let index = a.indexOf(bigNum)
+//     return index
     
-}
+// }
 
-const javob = findBig([1,11,12,4,3,12]);
-console.log(javob)
+// const javob = findBig([1,11,12,4,3,12]);
+// console.log(javob)
 
 
 
