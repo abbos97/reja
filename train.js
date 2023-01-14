@@ -1,9 +1,23 @@
+// ====================== I-task ========================
+
+function getPositive(num) {
+    return num.filter(n => n > 0)
+}
+console.log(getPositive([0, -15, 5, -3, 2, -8, 9, -11]))
+
+// ====================== I-task end ========================
+
+
+
+
+
+
 // ======================= H-task ======================
 
-function reverseString(a) {
-    return a.split("").reverse().join("")
-}
-console.log(reverseString("javascript"))
+// function reverseString(a) {
+//     return a.split("").reverse().join("")
+// }
+// console.log(reverseString("javascript"))
 
 //======================= end H-task =======================
 

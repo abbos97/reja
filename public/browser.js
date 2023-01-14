@@ -42,11 +42,24 @@ document.addEventListener("click", function(e) {
        } 
     }
 
+
     if(e.target.classList.contains("edit-me")) {
-        if(confirm("Edit qilishni hohlaysizmi?")) {
-            console.log("edit")
-        }else {
-            alert("Yoq")
-        }
+        let userInput = prompt("O'zgartirish kiriting!", e.target.parentElement.parentElement.querySelector(".item-text").innerHTML);
+        if(userInput) {
+            axios.post("/edit-item", {id: e.target.getAttribute("data-id"), new_input: userInput}).then(res => {
+                
+                e.target.parentElement.parentElement.querySelector(".item-text").innerHTML = userInput;
+            }).catch(err => {
+                console.log("Iltimos qayta kiritib koring ")
+            })
+        } 
     }
+})
+
+
+document.getElementById("clean-all").addEventListener("click", function() {
+    axios.post("/delete-all", {delete_all: true}).then(respose => {
+        alert(respose.data.state);
+        document.location.reload()
+    })
 })
