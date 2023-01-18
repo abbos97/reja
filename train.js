@@ -1,9 +1,26 @@
+
+
+
+
+// const condier = [1,2,32,1,42,2,4,55,212,1,3,5];
+// let c = 0;
+// condier.forEach((a) => {
+//     if(c<a) {
+//         c=a
+//     }
+// })
+// console.log(c)
+
+
+
+
+
 // ====================== I-task ========================
 
-function getPositive(num) {
-    return num.filter(n => n > 0)
-}
-console.log(getPositive([0, -15, 5, -3, 2, -8, 9, -11]))
+// function getPositive(num) {
+//     return num.filter(n => n > 0)
+// }
+// console.log(getPositive([0, -15, 5, -3, 2, -8, 9, -11]))
 
 // ====================== I-task end ========================
 
