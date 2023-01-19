@@ -1,16 +1,17 @@
+//=============== J-task =====================
 
+function returnInt(i){
+   if(typeof i == "number")
+        {if(i>0) {return 1}
+        else if(i<0) {return -1}
+        else{return 0}
+    }else {
+        return `Please enter some number...`
+    }
+}
 
-
-
-// const condier = [1,2,32,1,42,2,4,55,212,1,3,5];
-// let c = 0;
-// condier.forEach((a) => {
-//     if(c<a) {
-//         c=a
-//     }
-// })
-// console.log(c)
-
+const result = returnInt();
+console.log(result)
 
 
 
